@@ -1,0 +1,27 @@
+{
+  "name": "nightlifeapp",
+  "version": "1.0.0",
+  "description": "nightlife app for FCC",
+  "main": "server.js",
+  "dependencies": {
+    "passport": "^0.3.2",
+    "path": "^0.12.7",
+    "save": "^2.3.0",
+    "yelp-fusion": "^1.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MatthiasLiszt/nightlifeappwithyelp"
+  },
+  "keywords": [
+    "booking",
+    "nightlife"
+  ],
+  "author": "Matthias Liszt",
+  "license": "MIT"
+}

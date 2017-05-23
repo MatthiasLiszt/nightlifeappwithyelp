@@ -1,0 +1,53 @@
+<html>
+<style>
+.log
+ {text-align: right;
+  float: right;
+ }
+.register
+ {text-align: right;
+  float: right;
+ }
+.main
+ {text-align: center;}
+
+.cafe
+ {color: brown;
+  font-weight: bold;
+ }
+</style>
+<body>
+<div class="register"><a href="register">Register</a>&nbsp;</div>
+<div class="log"><a href="login"> <%=User %> </a>&nbsp;</div>
+<div class="main">
+<h1>Plans tonight ?</h1>
+<br></br>
+See which bars are hoppin' tonight and RSVP ahead of time!<br></br>
+Remember: take a cab and drink responsibly.<br></br>
+
+<form action="/search" method="get">
+<label for="city">
+<input type="text" name="city">
+<input type="submit" value="go">
+</label>
+</form>
+</div>
+<% var j=0; %>
+<% if( city !== undefined ){ %>
+<tbody>
+<ul>
+<% for(var i = 0; i < list.length; i++) { %>
+<li><tr><td>
+<% if(rsvp[i]===undefined){j=0;}else{j=rsvp[i];} %>
+<div class="cafe"><a href="<%-list[i].url%>" alt='no picture'><img src="<%-list[i].picture%>" width=99 height=99></a> <%=list[i].name %></div>&nbsp;
+ <%=list[i].address%> 
+<i><%-j%> going</i>&nbsp;
+<a href="/rsvp/<%-city%>/<%-i%>">&nbsp;RSVP</a>
+</td></tr></li>
+<% } %>
+</ul>
+</tbody>
+<%}%>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<html>
+<style>
+body{text-align : center}
+</style>
+<body>
+<h1>Reservation for <%=cname%> in <%=city%></h1>
+
+<% if(User=='Login'){%>
+please, login before RSVP 
+<%}else{%>
+<form action="/dorsvp/<%-city%>/<%-num%>" method="get">
+<label for="button">
+<input type="hidden" name="button" value="rsvp"><button>I go</button>
+</label>
+</form>
+<form action="/dorsvp/<%-city%>/<%-num%>" method="get">
+<label for="button">
+<input type="hidden" name="button" value="cancel"><button>no more</button>
+</label>
+</form>
+<%}%>
+
+<br></br>
+<a href="/">return to main page</a>
+</body>
+</html>
